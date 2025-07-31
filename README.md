@@ -32,7 +32,7 @@ Ajoutez des docstrings au format NumPy dans le code.
 L’historique Git de ce projet contient trop de commits. Veillez à n’en conserver que deux :  
 
 - le premier, `a1bafdb feat: init`
-- un second, que vous nommerez comme vous le souhaitez, mais dont le message devra respecter la convention [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification)
+- un second, que vous nommerez comme vous le souhaitez, mais dont le message devra respecter la convention [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ## Exercices : Data Modeling
 
