@@ -6,7 +6,7 @@ Vous devez être en mesure de justifier vos choix de design et/ou architecturaux
 
 Vous n’êtes pas obligé·e de résoudre tous les exercices ; faites simplement de votre mieux.
 
-## Exercice Python
+## Exercices : Software Design
 
 **Attention :** consultez le dossier `entretien_technique`  pour cette section.
 
@@ -27,14 +27,14 @@ Mettez en place des tests avec pytest pour le code (refactorisé ou non si vous 
 Ajoutez des docstrings au format NumPy dans le code.  
 **Bonus :** configurez mkdocs pour qu’il génère la documentation à partir des docstrings.
 
-## Exercice Git
+## Exercices : Git
 
 L’historique Git de ce projet contient trop de commits. Veillez à n’en conserver que deux :  
 
 - le premier, `a1bafdb feat: init`
 - un second, que vous nommerez comme vous le souhaitez, mais dont le message devra respecter la convention [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification)
 
-## Exercice Data Modeling
+## Exercices : Data Modeling
 
 ### Exercice 1 : Normalisation
 
@@ -58,6 +58,6 @@ Faites une modélisation en étoile pour cette table :
 | 1003      | 2025-07-12  | C101       | Martin      | Standard        | P100        | Smartphone X    | Électronique | 299,00         | 1        |
 | 1004      | 2025-07-20  | C100       | Dupont      | Premium         | P100        | Smartphone X    | Électronique | 299,00         | 1        |
 
-## Exercice System design/Data Architecture
+## Exercice : System design/Data Architecture
 
 Concevez une architecture de données sur GCP en vous appuyant uniquement sur des outils open source pour des traitements batch. Vous pouvez la réaliser sur [Excalidraw](https://excalidraw.com/).
