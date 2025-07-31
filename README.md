@@ -1,74 +1,63 @@
-# entretien-technique
+# Entretien technique
 
-[![Release](https://img.shields.io/github/v/release/jojo/entretien-technique)](https://img.shields.io/github/v/release/jojo/entretien-technique)
-[![Build status](https://img.shields.io/github/actions/workflow/status/jojo/entretien-technique/main.yml?branch=main)](https://github.com/jojo/entretien-technique/actions/workflows/main.yml?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/jojo/entretien-technique/branch/main/graph/badge.svg)](https://codecov.io/gh/jojo/entretien-technique)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/jojo/entretien-technique)](https://img.shields.io/github/commit-activity/m/jojo/entretien-technique)
-[![License](https://img.shields.io/github/license/jojo/entretien-technique)](https://img.shields.io/github/license/jojo/entretien-technique)
+Ce repo a pour objectif de tester vos compétences en software et data engineering. Cet entretien n’a aucune limite de temps et vous pouvez vous aider de n’importe quel outil (IA incluse).
 
-This is a template repository for Python projects that use uv for their dependency management.
+Vous devez être en mesure de justifier vos choix de design et/ou architecturaux, en indiquant leurs avantages et leurs limites lors de notre entretien vidéo.
 
-- **Github repository**: <https://github.com/jojo/entretien-technique/>
-- **Documentation** <https://jojo.github.io/entretien-technique/>
+Vous n’êtes pas obligé·e de résoudre tous les exercices ; faites simplement de votre mieux.
 
-## Getting started with your project
+## Exercice Python
 
-### 1. Create a New Repository
+**Attention :** consultez le dossier `entretien_technique`  pour cette section.
 
-First, create a repository on GitHub with the same name as this project, and then run the following commands:
+### Exercice 0
 
-```bash
-git init -b main
-git add .
-git commit -m "init commit"
-git remote add origin git@github.com:jojo/entretien-technique.git
-git push -u origin main
-```
+Installer [uv](https://docs.astral.sh/uv/guides/install-python/) et tout ce dont vous avec besoin dans le `Makefile`
 
-### 2. Set Up Your Development Environment
+### Exercice 1
 
-Then, install the environment and the pre-commit hooks with
+Dans le sous-dossier `entretien_technique`, plusieurs scripts ne sont pas optimaux car ils sont difficiles à maintenir et à faire évoluer. Refactorisez-les.
 
-```bash
-make install
-```
+### Exercice 2
 
-This will also generate your `uv.lock` file
+Mettez en place des tests avec pytest pour le code (refactorisé ou non si vous n’y êtes pas parvenu) afin d’obtenir une couverture minimale de 80 %.
 
-### 3. Run the pre-commit hooks
+### Exercice 3
 
-Initially, the CI/CD pipeline might be failing due to formatting issues. To resolve those run:
+Ajoutez des docstrings au format NumPy dans le code.  
+**Bonus :** configurez mkdocs pour qu’il génère la documentation à partir des docstrings.
 
-```bash
-uv run pre-commit run -a
-```
+## Exercice Git
 
-### 4. Commit the changes
+L’historique Git de ce projet contient trop de commits. Veillez à n’en conserver que deux :  
 
-Lastly, commit the changes made by the two steps above to your repository.
+- le premier, `a1bafdb feat: init`
+- un second, que vous nommerez comme vous le souhaitez, mais dont le message devra respecter la convention [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#specification)
 
-```bash
-git add .
-git commit -m 'Fix formatting issues'
-git push origin main
-```
+## Exercice Data Modeling
 
-You are now ready to start development on your project!
-The CI/CD pipeline will be triggered when you open a pull request, merge to main, or when you create a new release.
+### Exercice 1 : Normalisation
 
-To finalize the set-up for publishing to PyPI, see [here](https://fpgmaas.github.io/cookiecutter-uv/features/publishing/#set-up-for-pypi).
-For activating the automatic documentation with MkDocs, see [here](https://fpgmaas.github.io/cookiecutter-uv/features/mkdocs/#enabling-the-documentation-on-github).
-To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookiecutter-uv/features/codecov/).
+Normalisez la table suivante en 3NF :
 
-## Releasing a new version
+| ÉtudiantID | Nom    | CoursInscrits           | DeptID | NomDept  |
+| ---------- | ------ | ----------------------- | ------ | -------- |
+| S01        | Alice  | Mathématiques; Physique | D01    | Sciences |
+| S02        | Bob    | Histoire                | D02    | Lettres  |
+| S03        | Carole | Physique; Informatique  | D01    | Sciences |
+| S04        | David  |                         | D03    | Droit    |
 
-- Create an API Token on [PyPI](https://pypi.org/).
-- Add the API Token to your projects secrets with the name `PYPI_TOKEN` by visiting [this page](https://github.com/jojo/entretien-technique/settings/secrets/actions/new).
-- Create a [new release](https://github.com/jojo/entretien-technique/releases/new) on Github.
-- Create a new tag in the form `*.*.*`.
+### Exercice 2 : Modélisation dimensionnelle
 
-For more details, see [here](https://fpgmaas.github.io/cookiecutter-uv/features/cicd/#how-to-trigger-a-release).
+Faites une modélisation en étoile pour cette table :
 
----
+| vente\_id | date\_vente | client\_id | nom\_client | segment\_client | produit\_id | designation     | categorie    | prix\_unitaire | quantite |
+| --------- | ----------- | ---------- | ----------- | --------------- | ----------- | --------------- | ------------ | -------------- | -------- |
+| 1001      | 2025-06-15  | C100       | Dupont      | Standard        | P100        | Smartphone X    | Électronique | 299,00         | 2        |
+| 1002      | 2025-07-01  | C100       | Dupont      | Premium         | P200        | Coque Téléphone | Accessoire   | 19,00          | 1        |
+| 1003      | 2025-07-12  | C101       | Martin      | Standard        | P100        | Smartphone X    | Électronique | 299,00         | 1        |
+| 1004      | 2025-07-20  | C100       | Dupont      | Premium         | P100        | Smartphone X    | Électronique | 299,00         | 1        |
 
-Repository initiated with [fpgmaas/cookiecutter-uv](https://github.com/fpgmaas/cookiecutter-uv).
+## Exercice System design/Data Architecture
+
+Concevez une architecture de données sur GCP en vous appuyant uniquement sur des outils open source pour des traitements batch. Vous pouvez la réaliser sur [Excalidraw](https://excalidraw.com/).
