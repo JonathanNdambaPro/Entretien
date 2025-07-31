@@ -6,8 +6,6 @@ Vous devez être en mesure de justifier vos choix de design et/ou architecturaux
 
 Vous n’êtes pas obligé·e de résoudre tous les exercices ; faites simplement de votre mieux.
 
-
-
 ## Exercice Python
 
 **Attention :** consultez le dossier `entretien_technique`  pour cette section.
